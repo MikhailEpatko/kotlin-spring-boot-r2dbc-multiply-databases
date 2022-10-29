@@ -1,0 +1,33 @@
+app:
+  db:
+    user:
+      driver: postgresql
+      host: localhost
+      port: 5433
+      database: user_db
+      user: postgres
+      password: postgres
+    application:
+      driver: postgresql
+      host: localhost
+      port: 5455
+      database: application_db
+      user: postgres
+      password: postgres
+
+spring:
+  application:
+    name: application
+  main:
+    allow-bean-definition-overriding: true
+
+logging:
+  file:
+    name: ./logs/application.log
+  level:
+    root: info
+    io:
+      r2dbc:
+        postgresql:
+          QUERY: DEBUG
+          PARAM: DEBUG

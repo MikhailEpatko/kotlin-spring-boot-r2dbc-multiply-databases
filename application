@@ -1,0 +1,15 @@
+2022-10-29 17:35:27.026  INFO 137956 --- [main] ru.epatko.application.ApplicationKt      : Starting ApplicationKt using Java 17.0.1 on Tower with PID 137956 (/home/mikhail/IdeaProjects/mvp/kotlin-spring-boot-r2dbc-multiply-databases/build/classes/kotlin/main started by mikhail in /home/mikhail/IdeaProjects/mvp/kotlin-spring-boot-r2dbc-multiply-databases)
+2022-10-29 17:35:27.028  INFO 137956 --- [main] ru.epatko.application.ApplicationKt      : No active profile set, falling back to 1 default profile: "default"
+2022-10-29 17:35:27.211  INFO 137956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-10-29 17:35:27.211  INFO 137956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022-10-29 17:35:27.270  INFO 137956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 R2DBC repository interfaces.
+2022-10-29 17:35:27.270  INFO 137956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-10-29 17:35:27.271  INFO 137956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022-10-29 17:35:27.273  INFO 137956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 1 R2DBC repository interfaces.
+2022-10-29 17:35:27.793  INFO 137956 --- [main] ru.epatko.application.ApplicationKt      : Started ApplicationKt in 0.971 seconds (JVM running for 1.233)
+2022-10-29 17:35:28.032 DEBUG 137956 --- [reactor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : Executing query: SHOW TRANSACTION ISOLATION LEVEL
+2022-10-29 17:35:28.038 DEBUG 137956 --- [reactor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : Executing query: SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore','geometry')
+2022-10-29 17:35:28.042 DEBUG 137956 --- [reactor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : Executing query: SELECT app_user.* FROM app_user
+2022-10-29 17:35:28.084 DEBUG 137956 --- [reactor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : Executing query: SHOW TRANSACTION ISOLATION LEVEL
+2022-10-29 17:35:28.085 DEBUG 137956 --- [reactor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : Executing query: SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore','geometry')
+2022-10-29 17:35:28.086 DEBUG 137956 --- [reactor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : Executing query: SELECT application.* FROM application

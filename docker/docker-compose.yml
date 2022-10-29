@@ -1,0 +1,46 @@
+version: '3.5'
+
+volumes:
+  user_db:
+    driver: local
+  application_db:
+    driver: local
+
+networks:
+  back:
+
+services:
+
+  user-db:
+    image: postgres:13.5-alpine
+    hostname: user-db
+    ports:
+      - "5433:5432"
+    container_name: user-db
+    restart: unless-stopped
+    volumes:
+      - ./database/psql-entrypoint-user-initdb/:/docker-entrypoint-initdb.d/
+      - user_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: user_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      back:
+
+  application-db:
+    image: postgres:13.5-alpine
+    hostname: application-db
+    ports:
+      - "5455:5432"
+    container_name: application-db
+    restart: unless-stopped
+    volumes:
+      - ./database/psql-entrypoint-application-initdb/:/docker-entrypoint-initdb.d/
+      - application_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: application_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      back:
