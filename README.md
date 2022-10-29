@@ -16,7 +16,7 @@ Installed:
 #### 1. Start databases in docker compose:
 
 ```
-cd /path/to/the/compose/file
+cd ./docker
 
 docker compose up -d
 
