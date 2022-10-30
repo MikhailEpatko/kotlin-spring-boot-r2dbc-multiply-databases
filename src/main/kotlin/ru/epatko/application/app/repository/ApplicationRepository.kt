@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository
 import ru.epatko.application.app.model.ApplicationEntity
 
 /**
- * Added to the basePackageClasses of [ru.epatko.application.app.config.UserDatabaseConfig]
+ * Added to the basePackageClasses of [ru.epatko.application.app.config.ApplicationDatabaseConfig]
  */
 @Repository
 interface ApplicationRepository : CoroutineSortingRepository<ApplicationEntity, Long>
