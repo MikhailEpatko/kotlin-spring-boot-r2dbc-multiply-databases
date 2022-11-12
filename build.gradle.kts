@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.7.4"
+    id("org.springframework.boot") version "2.7.5"
     id("io.spring.dependency-management") version "1.0.12.RELEASE"
     id("io.gitlab.arturbosch.detekt").version("1.21.0")
     kotlin("jvm") version "1.7.20"
@@ -25,8 +25,8 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.7.4")
-    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:2.7.4")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.7.5")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:2.7.5")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.1.7")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.20")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20")
@@ -34,6 +34,10 @@ dependencies {
 
     runtimeOnly("org.postgresql:postgresql:42.5.0")
     runtimeOnly("org.postgresql:r2dbc-postgresql:0.9.2.RELEASE")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.5")
+    testImplementation("org.testcontainers:postgresql:1.17.4")
+    testImplementation("org.testcontainers:junit-jupiter:1.17.4")
 }
 
 tasks.withType<KotlinCompile> {
@@ -41,4 +45,8 @@ tasks.withType<KotlinCompile> {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "17"
     }
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
